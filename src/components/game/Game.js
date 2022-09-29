@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Subscription, combineLatest } from 'rxjs';
 import Question from './Question';
-import Streak from './elements/Streak';
+import { Streak, GameButton } from './elements/index';
 // import level4 from '../../question-lib/level-4/questions-eliza.json';
-import { LVL_1 } from '../../question-lib';
-import generateQuestions from '../../question-lib/generate-questions';
+// import { LVL_1 } from '../../question-lib';
+// import {generateQuestions} from '../../question-lib/generate-questions';
 import confetti from '../../assets/svg/confetti.svg'
 import { gameService } from '../../services'
 import { GameState } from '../../services/game-service'
@@ -18,8 +18,6 @@ export default class Game extends Component {
             state: null,
             correctCount: 0,
             index: 0,
-            // // questions: [ ...generateQuestions(['+', '-',], 6, 3, { time: 8000, points: 825 }) ],
-            // questions: [ ...LVL_1 ],
             score: 0,
             streak: {
                 count: 0,
@@ -52,10 +50,18 @@ export default class Game extends Component {
     renderGameState() {
         if (this.state.state === GameState.TITLE) {
             return (
-                <div className="play-button transition-background bg-pirkle rounded-5 keyboard-button mx-auto w-75"
-                    onClick={() => gameService.startGame()}
-                >
-                    Play
+                <div style={{ display: 'flex', minHeight: '80vh', maxWidth: '40vw', margin: 'auto', alignItems: 'center', justifyContent: 'center'}}>
+                    <GameButton text="Play" onClick={() => gameService.levelSelect()} />
+                </div>
+            )
+        } else if (this.state.state === GameState.LEVEL_SELECT) {
+            return (
+                <div >
+                    <GameButton text="LVL 1" onClick={() => gameService.startGame(1)} />
+                    <GameButton text="LVL 2" onClick={() => gameService.startGame(2)} />
+                    <GameButton text="LVL 3" onClick={() => gameService.startGame(3)} />
+                    <GameButton text="LVL 4" onClick={() => gameService.startGame(4)} />
+                    <GameButton text="INSANE MODE" onClick={() => gameService.startGame(5)} />
                 </div>
             )
         } else if (this.state.state === GameState.PLAYING) {

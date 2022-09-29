@@ -1,5 +1,5 @@
 const fs = require('fs');
-const generateQuestions = require('generate-questions')
+const {generateQuestions} = require('generate-questions')
 
 fs.mkdirSync('./level-1/', { recursive: true });
 fs.mkdirSync('./level-2/', { recursive: true });

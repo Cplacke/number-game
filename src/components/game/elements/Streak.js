@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { gameService, streakService } from '../../../services'
 
-
-export default class Streak extends Component {
+export class Streak extends Component {
 
     constructor(props) {
         super(props);

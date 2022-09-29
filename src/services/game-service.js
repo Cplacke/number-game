@@ -1,5 +1,5 @@
 import { BehaviorSubject, ReplaySubject } from "rxjs";
-import generateQuestions from '../question-lib/generate-questions';
+import { generateLevel } from '../question-lib/generate-questions';
 import LVL_1 from '../question-lib/level-1/questions.json';
 
 
@@ -21,10 +21,15 @@ export class GameService {
 
     // TODO: add local-storage call to save local high score
 
-    startGame() {
+    levelSelect() {
+        this.state$.next(GameState.LEVEL_SELECT);
+    }
+
+    startGame(level) {
         this.questionIndex = 0;
-        this.questions$.next( LVL_1 );
-        this.currentQuestion$.next( LVL_1[this.questionIndex] );
+        const questions = generateLevel(level);
+        this.questions$.next( questions );
+        this.currentQuestion$.next( questions[this.questionIndex] );
         this.state$.next(GameState.PLAYING);
     }
 
