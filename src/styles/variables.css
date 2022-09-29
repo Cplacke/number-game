@@ -1,0 +1,63 @@
+:root {
+    --space: #EEEEEE;
+    --navy: #002B5B;
+    --blue: #2B4865;
+    --dark-blue: #1c2e41;
+    --winter: #256D85;
+    --teal: #8FE3CF;
+    --green: #0cc258;
+    --light-green: #32c06d;
+    --dark-green: #09803b;
+
+    --black: #100720;
+    --purple: #7a49a5;
+    --light-purple: #CF8FE3;
+    --pink: #FA2FB5;
+    --light-pink: #E38FA3;
+
+    --yellow: #FFC23C;
+    --light-yellow: #facb66;
+    --dark-yellow: #a87e23;
+
+    --red: #fa1a0a;
+    --light-red: #c2180c;
+    --dark-red: #851008;
+}
+
+.text-navy { color: var(--navy); }
+.text-blue { color: var(--blue); }
+.text-dark-blue { color: var(--dark-blue); }
+.text-winter { color: var(--winter); }
+.text-teal { color: var(--teal); }
+.text-black { color: var(--black); }
+.text-purple { color: var(--purple); }
+.text-light-purple { color: var(--light-purple); }
+.text-light-pink { color: var(--light-pink); }
+.text-pink { color: var(--pink); }
+.text-yellow { color: var(--yellow); }
+.text-light-yellow { color: var(--light-yellow); }
+.text-dark-yellow { color: var(--dark-yellow); }
+.text-red { color: var(--red); }
+.text-light-red { color: var(--light-red); }
+.text-dark-red { color: var(--dark-red); }
+.text-space { color: var(--space); }
+.text-green { color: var(--green); }
+.text-light-green { color: var(--light-green); }
+.text-dark-green { color: var(--dark-green); }
+
+.bg-navy { background-color: var(--navy); }
+.bg-blue { background-color: var(--blue); }
+.bg-dark-blue { background-color: var(--dark-blue); }
+.bg-winter { background-color: var(--winter); }
+.bg-black { background-color: var(--black); }
+.bg-purple { background-color: var(--purple); }
+.bg-light-purple { background-color: var(--light-purple); }
+.bg-light-pink { background-color: var(--light-pink); }
+.bg-pink { background-color: var(--pink); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-light-yellow { background-color: var(--light-yellow); }
+.bg-dark-yellow { background-color: var(--dark-yellow); }
+.bg-space { background-color: var(--space); }
+.bg-green { background-color: var(--green); }
+.bg-light-green { background-color: var(--light-green); }
+.bg-dark-green { background-color: var(--dark-green); }

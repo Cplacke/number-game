@@ -1,0 +1,38 @@
+[
+  {
+    "prompt": "5 + 3",
+    "answer": 8,
+    "time": 6000,
+    "points": 500
+  },
+  {
+    "prompt": "11 + 5",
+    "answer": 16,
+    "time": 6000,
+    "points": 500
+  },
+  {
+    "prompt": "8 + 18",
+    "answer": 26,
+    "time": 6000,
+    "points": 500
+  },
+  {
+    "prompt": "4 - 2",
+    "answer": 2,
+    "time": 6000,
+    "points": 500
+  },
+  {
+    "prompt": "13 - 17",
+    "answer": -4,
+    "time": 6000,
+    "points": 500
+  },
+  {
+    "prompt": "13 + 2",
+    "answer": 15,
+    "time": 6000,
+    "points": 500
+  }
+]

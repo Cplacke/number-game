@@ -1,0 +1,38 @@
+[
+  {
+    "prompt": "1 * 17 + 11",
+    "answer": 28,
+    "time": 12000,
+    "points": 1400
+  },
+  {
+    "prompt": "10 * 17 - 11",
+    "answer": 159,
+    "time": 12000,
+    "points": 1400
+  },
+  {
+    "prompt": "19 - 2 + 2",
+    "answer": 19,
+    "time": 12000,
+    "points": 1400
+  },
+  {
+    "prompt": "10 + 10 - 11",
+    "answer": 9,
+    "time": 12000,
+    "points": 1400
+  },
+  {
+    "prompt": "16 * 5 * 11",
+    "answer": 880,
+    "time": 12000,
+    "points": 1400
+  },
+  {
+    "prompt": "15 + 5 * 7",
+    "answer": 50,
+    "time": 12000,
+    "points": 1400
+  }
+]

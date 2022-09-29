@@ -1,0 +1,44 @@
+html {
+    background-color: var(--blue);
+}
+
+.app-container { 
+    display: block;
+    margin: auto;
+}
+
+.game-container {
+    display: block;
+    max-width: 1058px;
+    margin: auto;
+    min-width: 235px;
+    position: relative;
+}
+
+.question-content {
+    text-align: center;
+    font-family: monospace;
+    font-size: 2.5rem;
+    line-height: 30vh;
+}
+
+.play-button {
+    margin: 40vh 0;
+    max-width: 40vw;
+    color: var(--bs-gray-900);
+}
+.play-button.keyboard-button {
+    height: 50px;
+    line-height: 50px;
+}
+
+.number-input-line {
+    text-overflow: hidden;
+}
+
+.logo {
+	width: 32px;
+	position: absolute;
+	top: -5px;
+	left: 16px;
+}

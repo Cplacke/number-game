@@ -1,0 +1,62 @@
+[
+  {
+    "prompt": "1 + 4 * 19",
+    "answer": 77,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "16 + 13 * 12",
+    "answer": 172,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "17 + 3 * 15",
+    "answer": 62,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "5 + 13 + 11",
+    "answer": 29,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "14 * 3 * 6",
+    "answer": 252,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "17 + 3 * 17",
+    "answer": 68,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "9 * 19 * 14",
+    "answer": 2394,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "1 * 9 * 1",
+    "answer": 9,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "2 + 7 + 5",
+    "answer": 14,
+    "time": 12000,
+    "points": 2000
+  },
+  {
+    "prompt": "1 + 9 + 3",
+    "answer": 13,
+    "time": 12000,
+    "points": 2000
+  }
+]

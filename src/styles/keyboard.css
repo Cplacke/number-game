@@ -1,0 +1,56 @@
+.keyboard {
+    display: flex;
+    width: 80vw;
+    max-width: 700px;
+}
+
+.keyboard-button {
+    flex-grow: 1;
+    background-color: var(--yellow);
+    font-size: 35px;
+    line-height: 45px;
+    cursor: pointer;
+    font-family: monospace;
+    text-align: center;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.keyboard-button:hover {
+    background-color: var(--light-yellow);
+}
+.keyboard-button:active {
+    background-color: var(--dark-yellow);
+    color: #bcbcbc;
+}
+.keyboard-button span span {
+    display: block;
+    padding: 25%;
+    height: 30%;
+    font-size: 35;
+    font-family: monospace;
+}
+.red-button {
+    background: var(--red);
+    color: var(--space);
+}
+.red-button:hover {
+    background: var(--light-red);
+    color: var(--space);
+}
+.red-button:active {
+    background: var(--dark-red);
+    color: var(--space);
+}
+.green-button {
+    background: var(--green);
+    color: var(--space);
+}
+.green-button:hover {
+    background: var(--light-green);
+    color: var(--space);
+}
+.green-button:active {
+    background: var(--dark-green);
+    color: var(--space);
+}
