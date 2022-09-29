@@ -46,7 +46,7 @@ export default class NumericKeyboard extends Component {
                     { this.state.value }
                     { 
                         this.state.value && 
-                        <div className="bi-x-circle text-light-red
+                        <div className="fas fa-backspace text-light-red
                             float-end animate__animated animate__faster animate__lightSpeedInRight"
                             onClick={() => this.keyPress({ clear: true })}
                         ></div> 
@@ -83,7 +83,7 @@ export default class NumericKeyboard extends Component {
                                 ]}
                             </div>
                         </div>
-                        { this.renderInputButton({ submit: true, className: 'green-button me-0 bi-arrow-up-square fs-2 p-4' }) }
+                        { this.renderInputButton({ submit: true, className: 'green-button me-0 fas fa-arrow-alt-circle-up fs-2 p-4' }) }
                     </div>
                 </div>
             </div>
