@@ -30,7 +30,7 @@ export default class Streak extends Component {
         return this.state.iterator.map(s => (
             <div key={'steak-'+s} className={
                 "animate__animated animate__infinite animate__tada d-inline "+
-                "fas fa-fire-alt text-light-red" + this.props.className || ""
+                "fas fa-fire text-light-red" + this.props.className || ""
             }></div>
         ));
     }

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mathel",
+  "name": "A number game designed to keep you sharp!",
   "icons": [
     {
       "src": "favicon.ico",

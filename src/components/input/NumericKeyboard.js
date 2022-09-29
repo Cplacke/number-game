@@ -56,19 +56,19 @@ export default class NumericKeyboard extends Component {
                     <div className="keyboard w-100">
                         <div className="w-100">
                             <div className="d-flex">
-                                { this.renderInputButton({ text: '1' }) }
-                                { this.renderInputButton({ text: '2' }) }
-                                { this.renderInputButton({ text: '3' }) }
+                                { this.renderInputButton({ text: '1', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '2', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '3', className: 'keyboard-button' }) }
                             </div>
                             <div className="d-flex">
-                                { this.renderInputButton({ text: '4' }) }
-                                { this.renderInputButton({ text: '5' }) }
-                                { this.renderInputButton({ text: '6' }) }
+                                { this.renderInputButton({ text: '4', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '5', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '6', className: 'keyboard-button' }) }
                             </div>
                             <div className="d-flex">
-                                { this.renderInputButton({ text: '7' }) }
-                                { this.renderInputButton({ text: '8' }) }
-                                { this.renderInputButton({ text: '9' }) }
+                                { this.renderInputButton({ text: '7', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '8', className: 'keyboard-button' }) }
+                                { this.renderInputButton({ text: '9', className: 'keyboard-button' }) }
                             </div>
                             <div className="d-flex">
                                 {[ 
@@ -77,13 +77,13 @@ export default class NumericKeyboard extends Component {
                                         text: (
                                             Number(this.state.value) < 0 ? '+' : '-'
                                         ), 
-                                        className: '' //green-button' 
+                                        className: 'keyboard-button' //green-button' 
                                     }),
-                                    this.renderInputButton({ text: '0', style: { flexGrow: 2 } }) 
+                                    this.renderInputButton({ text: '0', style: { flexGrow: 2 }, className: 'keyboard-button'}) 
                                 ]}
                             </div>
                         </div>
-                        { this.renderInputButton({ submit: true, className: 'green-button me-0 fas fa-arrow-alt-circle-up fs-2 p-4' }) }
+                        { this.renderInputButton({ submit: true, className: 'green-button me-0 fas fa-arrow-circle-up fs-2 p-4' }) }
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export default class NumericKeyboard extends Component {
 
     renderInputButton = (options = { text: 'X', value: 0, size: null, className: '' }) => {
         return (
-            <div className={"keyboard-button text-navy rounded-1 me-1 mt-1 "+options.className} 
+            <div className={"text-navy rounded-1 me-1 mt-1 "+options.className} 
                 onClick={(e) => this.keyPress(options)}
                 style={{...options.style}}
             >{ options.text }</div>
