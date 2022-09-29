@@ -6,13 +6,14 @@ export class LocalStorageService {
 
     saveHighScore(newScore) {
         let data = window.localStorage.getItem('highScore');
+        let highScores = [ ]
         if ( data ) {
             highScores = JSON.parse(data);
-            highScores.push(newScore);
-            highScores.sort((a, b) => b - a)
-        } else {
-            // no high scores yet set; init object storage
-        }
+        } 
+        highScores.push(newScore);
+        highScores = highScores
+            .sort((a, b) => b - a)
+            .slice();
     }
 
 }
