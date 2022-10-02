@@ -34,6 +34,11 @@ const getAssetHeadersFromPath = (pathname) => {
             'content-type': 'image/x-icon'
         };
     }
+    if (/\.json/.test(pathname)) {
+        return {
+            'content-type': 'application/json'
+        };
+    }
     if (/\.js/.test(pathname)) {
         return {
             'content-type': 'application/javascript'

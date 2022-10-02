@@ -1,4 +1,4 @@
-import { Subscription, timer } from "rxjs";
+import { Subscription, timer, interval } from "rxjs";
 
 
 export class CountdownService {
@@ -10,6 +10,6 @@ export class CountdownService {
     setTimer(ms) {
         this.subscription.unsubscribe();
         this.countdown$ = timer(ms);
-        this.ticks$ = timer(ms, 1);
+        this.ticks$ = interval(100); // every 100 ms, 1/10 sec
     }
 }

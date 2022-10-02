@@ -21,12 +21,12 @@ export default class Countdown extends Component {
 
     setDuration() {
         const ms = this.props.question.time; 
-        countdownService.setTimer(ms);
-        this.timerSubscription.unsubscribe();
-        this.timerSubscription = countdownService.countdown$.subscribe(() => {
-            console.info('timers out...');
-            this.props.onTimeUp();
-        })
+        // countdownService.setTimer(ms);
+        // this.timerSubscription.unsubscribe();
+        // this.timerSubscription = countdownService.countdown$.subscribe(() => {
+        //     console.info('timers out...');
+        //     this.props.onTimeUp();
+        // })
 
         // reset css animation
         setTimeout(() => {

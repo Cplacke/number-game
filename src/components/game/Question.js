@@ -15,7 +15,6 @@ export default class Question extends Component {
 
     componentDidMount() {
         gameService.currentQuestion$.subscribe((currentQuestion) => {
-            console.info({ currentQuestion });
             this.setState({
                 questionNumber: gameService.questionIndex,
                 currentQuestion

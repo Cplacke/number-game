@@ -6,19 +6,19 @@ export const generateLevel = (level) => {
     switch (level) {
         case 1: 
             operands = [ '+', '-' ];
-            return generateQuestions(operands, 6, 2, { time: 6*1000, points: 500 });
+            return generateQuestions(operands, 6, 2, { time: 6*1000, points: 1200 });
         case 2: 
             operands = [ '+', '-', '*' ];
-            return generateQuestions(operands, 6, 2, { time: 7.5*1000, points: 700 });
+            return generateQuestions(operands, 6, 2, { time: 7.5*1000, points: 1800 });
         case 3: 
             operands = [ '+', '-' ];
-            return generateQuestions(operands, 6, 3, { time: 10*1000, points: 1000 });
+            return generateQuestions(operands, 6, 3, { time: 10*1000, points: 2500 });
         case 4: 
             operands = [ '+', '-', '*' ];
-            return generateQuestions(operands, 6, 3, { time: 12*1000, points: 1400 });
+            return generateQuestions(operands, 6, 3, { time: 12*1000, points: 3200 });
         case 5: 
             operands = [ '-', '*' ];
-            return generateQuestions(operands, 6, 3, { time: 12*1000, points: 3000 });
+            return generateQuestions(operands, 6, 3, { time: 12*1000, points: 5000 });
     }
 }
 
@@ -38,9 +38,17 @@ export const generateQuestions = (operands, count, terms=2, append) => {
 
 const getPrompt = (terms, operands) => {
     let prompt = '';
+    let randomTerm;
     for(let i=0; i < terms; i++) {
-        let t = getRandInt(1, 20)
-        prompt += `${t}${i+1 < terms ? ' '+operands[getRandInt(0, operands.length)]+' ' : ''}`;
+        const randomOperand = operands[getRandInt(0, operands.length)];
+        const limit = (
+            randomOperand === '*' || prompt.includes('*')
+        )? 10 : 20
+        randomTerm = getRandInt(1, limit)
+        prompt += `${randomTerm}`;
+        if ( i+1 < terms ) {
+            prompt += ` ${randomOperand} `;
+        }
     }
     return prompt;
 }
