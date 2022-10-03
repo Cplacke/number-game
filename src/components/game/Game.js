@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Subscription, combineLatest } from 'rxjs';
 import Question from './Question';
-import { Streak, GameButton } from './elements/index';
+import { Streak, GameButton, QuestionReview } from './elements/index';
 // import level4 from '../../question-lib/level-4/questions-eliza.json';
 // import { LVL_1 } from '../../question-lib';
 // import {generateQuestions} from '../../question-lib/generate-questions';
@@ -91,6 +91,11 @@ export default class Game extends Component {
                     </h3>
                     <div className="text-center fs-3">
                         <Streak max className="text-center"/>
+                        {
+                            gameService.questions$.value.map((question, i) => ( 
+                                <QuestionReview id={"review-q-"+i} question={question}/>
+                            ))
+                        }
                     </div>
                 </div>
             )

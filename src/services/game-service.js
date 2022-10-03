@@ -48,6 +48,8 @@ export class GameService {
     scoreQuestion(answer) {
         const q = this.currentQuestion$.value;
         const isCorrect = q.answer.toString() == answer;
+        this.currentQuestion$.value.answered = answer;
+        this.currentQuestion$.value.isCorrect = isCorrect;
 
         if ( isCorrect ) {
             this.streakService.addStreak();
