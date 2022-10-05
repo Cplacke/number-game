@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Subscription, combineLatest } from 'rxjs';
 import Question from './Question';
-import { Streak, GameButton, QuestionReview } from './elements/index';
-// import level4 from '../../question-lib/level-4/questions-eliza.json';
-// import { LVL_1 } from '../../question-lib';
-// import {generateQuestions} from '../../question-lib/generate-questions';
-import confetti from '../../assets/svg/confetti.svg'
+import { Streak, GameButton } from './elements/index';
+import { CompleteScreen } from './screen/index';
 import { gameService } from '../../services'
 import { GameState } from '../../services/game-service'
 
@@ -57,11 +54,11 @@ export default class Game extends Component {
         } else if (this.state.state === GameState.LEVEL_SELECT) {
             return (
                 <div >
-                    <GameButton text="LVL 1" onClick={() => gameService.startGame(1)} />
-                    <GameButton text="LVL 2" onClick={() => gameService.startGame(2)} />
-                    <GameButton text="LVL 3" onClick={() => gameService.startGame(3)} />
-                    <GameButton text="LVL 4" onClick={() => gameService.startGame(4)} />
-                    <GameButton text="INSANE MODE" onClick={() => gameService.startGame(5)} />
+                    <GameButton text="LVL 1" colorClass="bg-pirkle" onClick={() => gameService.startGame(1)} />
+                    <GameButton text="LVL 2" colorClass="bg-winter-green" onClick={() => gameService.startGame(2)} />
+                    <GameButton text="LVL 3" colorClass="bg-winter-green" onClick={() => gameService.startGame(3)} />
+                    <GameButton text="LVL 4" colorClass="bg-winter-green" onClick={() => gameService.startGame(4)} />
+                    <GameButton text="INSANE MODE" colorClass="bg-rellow" onClick={() => gameService.startGame(5)} />
                 </div>
             )
         } else if (this.state.state === GameState.PLAYING) {
@@ -80,24 +77,7 @@ export default class Game extends Component {
             )
         } else if (this.state.state === GameState.COMPLETE) {
             return (
-                <div className="m-auto font-monospace" style={{ minHeight: '80vh' }}>
-                    <img className="celebration" src={confetti} />
-                    <h1 className="mt-5 text-center text-light-pink">High Score</h1>
-                    <h2 className="text-center high-score text-pink">
-                        { this.state.score }
-                    </h2>
-                    <h3 className="text-center mt-4 high-score  text-pink">
-                        { this.state.correctCount } of { gameService.questions$.value.length } correct
-                    </h3>
-                    <div className="text-center fs-3">
-                        <Streak max className="text-center"/>
-                        {
-                            gameService.questions$.value.map((question, i) => ( 
-                                <QuestionReview id={"review-q-"+i} question={question}/>
-                            ))
-                        }
-                    </div>
-                </div>
+                <CompleteScreen />
             )
         }
     }

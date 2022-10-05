@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import NumericKeyboard from '../input/NumericKeyboard'
-import Countdown from './Countdown'
+import { Countdown, NumericKeyboard } from './elements/index'
 import { gameService } from '../../services'
 
 export default class Question extends Component {

@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
-import { countdownService } from '../../services'
-import { of, tap, timer, Subscription } from 'rxjs'
 
-export default class Countdown extends Component {
-
-    timerSubscription = new Subscription();;
-
-    constructor(props) {
-        super(props);
-    }
+export class Countdown extends Component {
 
     componentDidMount() {
         this.setDuration();

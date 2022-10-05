@@ -1,14 +1,14 @@
 
 export class LocalStorageService {
 
-    HIGH_SCORE_COUNT = 10;
+    HIGH_SCORE_COUNT = 5;
 
     addHighScore(newScore) {
         let highScores = this.getHighScoreData();
         highScores.push(newScore);
         highScores = highScores
             .sort((a, b) => b - a)
-            .slice(0, 5); // only keep 10 high scores
+            .slice(0, this.HIGH_SCORE_COUNT); // only keep X highScores
         this.setHighScoreData(highScores);
     }
 

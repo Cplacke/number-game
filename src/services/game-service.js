@@ -2,6 +2,12 @@ import { BehaviorSubject, take } from "rxjs";
 import { generateLevel } from '../question-lib/generate-questions';
 import { LocalStorageService } from './local-storage-service';
 
+export const GameState = {
+    TITLE: 'TITLE',
+    LEVEL_SELECT: 'LEVEL_SELECT',
+    PLAYING: 'PLAYING',
+    COMPLETE: 'GAME_COMPLETE',
+}
 export class GameService {
     streakService;
     countdownService;
@@ -12,6 +18,7 @@ export class GameService {
         this.localStorageService = new LocalStorageService();
     }
 
+    level;
     state$ = new BehaviorSubject(GameState.TITLE);
     score$ = new BehaviorSubject(0);
     correctCount$ = new BehaviorSubject(0);
@@ -28,10 +35,8 @@ export class GameService {
     }
 
     startGame(level) {
-        this.questionIndex = 0;
-        const questions = generateLevel(level);
-        this.questions$.next( questions );
-        this.currentQuestion$.next( questions[this.questionIndex] );
+        this.level = level;
+        this.resetGame();
         this.state$.next(GameState.PLAYING);
         this.resetCountdownClock(); // start clock
     }
@@ -43,6 +48,15 @@ export class GameService {
         this.localStorageService.addHighScore(
             this.score$.value
         );
+    }
+
+    resetGame() {
+        this.questionIndex = 0;
+        this.score$.next(0);
+        this.correctCount$.next(0);
+        const questions = generateLevel(this.level);
+        this.questions$.next( questions );
+        this.currentQuestion$.next( questions[this.questionIndex] );
     }
 
     scoreQuestion(answer) {
@@ -102,11 +116,3 @@ export class GameService {
             })
     }
 }
-
-export const GameState = {
-    TITLE: 'TITLE',
-    LEVEL_SELECT: 'LEVEL_SELECT',
-    PLAYING: 'PLAYING',
-    COMPLETE: 'GAME_COMPLETE',
-}
-

@@ -1,19 +1,18 @@
 @keyframes TransitioningBackground {
     0% {
-        background-position: 1% 0%;
+        background-position: 0% 0%;
     }
     50% {
-        background-position: 99% 100%;
-
+        background-position: 100% 100%;
     }
     100% {
-        background-position: 1% 0%;
+        background-position: 0% 0%;
     }
 }
 
 .transition-background {
     background-size: 145% 200%;
-    animation: TransitioningBackground 1.5s ease infinite;
+    animation: TransitioningBackground 2s ease infinite;
 }
 .transition-background.fast {
     background-size: 75% 100%;
@@ -58,6 +57,16 @@
 .bg-pirkle { 
     background-image: linear-gradient(270deg, var(--light-purple), var(--light-pink));
 }
+.bg-winter-green { 
+    background-image: linear-gradient(270deg, var(--winter), var(--light-green));
+}
+.bg-rellow { 
+    background-image: linear-gradient(270deg, var(--light-red), var(--light-yellow));
+}
+
+
+
+
 
 .bg-bleen { 
     background-image: linear-gradient(30deg, rgb(29, 128, 141), rgb(31, 75, 105));

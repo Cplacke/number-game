@@ -1,7 +1,10 @@
 
-export const GameButton = ({ text, onClick }) => {
+export const GameButton = ({ text, onClick, colorClass }) => {
+    if (!colorClass) {
+        colorClass = 'bg-pirkle'
+    }
     return (
-        <div className="play-button transition-background bg-pirkle rounded-5 keyboard-button mx-auto w-75"
+        <div className={`${colorClass} play-button transition-background rounded-5 keyboard-button mx-auto w-75`}
             onClick={onClick}
         >
             { text }
