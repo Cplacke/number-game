@@ -16,10 +16,6 @@ export class CompleteScreen extends Component {
         this.newHighScore = this.currentScore >= this.pastHighScores[0];
     }
 
-    playAgain = (level) => {
-        gameService.startGame(level);
-    }
-
     render() {
         return (
             <div className="m-auto font-monospace" style={{ minHeight: '80vh' }}>
@@ -34,19 +30,21 @@ export class CompleteScreen extends Component {
                     { gameService.correctCount$.value } of { gameService.questions$.value.length } correct
                 </div>
 
-                <GameButton text="Play Again" colorClass="bg-pirkle m-3" onClick={() => this.playAgain(gameService.level)} />
+                <GameButton text="Play Again" colorClass="bg-pirkle m-2" 
+                    onClick={() => gameService.levelSelect()} 
+                />
 
                 <div className="text-center fs-3">
                     <Streak max className="text-center"/>
                     <div className="my-2">
                         {
                             gameService.questions$.value.map((question, i) => ( 
-                                <QuestionReview id={"review-q-"+i} question={question}/>
+                                <QuestionReview id={`review-q-${i}`} question={question}/>
                             ))
                         }
                     </div>
                     <div className="fs-6 text-light-purple">
-                        <div>Past Scores:</div>
+                        <div>Top Scores:</div>
                         { 
                             this.pastHighScores.map((s, i) => (
                                 <span id={`score-${i}`} className="me-2">
