@@ -31,7 +31,7 @@ export class CompleteScreen extends Component {
                 </div>
 
                 <GameButton text="Play Again" colorClass="bg-pirkle m-2" 
-                    onClick={() => gameService.levelSelect()} 
+                    onClick={() => window.location = window.location} 
                 />
 
                 <div className="text-center fs-3">
